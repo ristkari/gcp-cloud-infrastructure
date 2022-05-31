@@ -14,7 +14,7 @@ module "enforce-resource-locations" {
   version           = "5.1.0"
   constraint        = "constraints/gcp.resourceLocations"
   enforce           = null
-  allow             = ["us-locations", "in:eu-locations"]
+  allow             = ["in:us-locations", "in:eu-locations"]
   allow_list_length = 2
   policy_type       = "list"
   policy_for        = "folder"
