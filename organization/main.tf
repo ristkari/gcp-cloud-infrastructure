@@ -29,19 +29,22 @@ resource "google_folder" "prd" {
 }
 
 resource "google_project" "shared_vpc" {
-  name       = "vpc-dev-00001"
-  project_id = "vpc-dev-00001"
-  folder_id  = google_folder.services.name
+  name            = "vpc-dev-00001"
+  project_id      = "vpc-dev-00001"
+  folder_id       = google_folder.services.name
+  billing_account = var.common_service_billing_account
 }
 
 resource "google_project" "shared_vpc" {
-  name       = "vpc-stg-00001"
-  project_id = "vpc-stg-00001"
-  folder_id  = google_folder.services.name
+  name            = "vpc-stg-00001"
+  project_id      = "vpc-stg-00001"
+  folder_id       = google_folder.services.name
+  billing_account = var.common_service_billing_account
 }
 
 resource "google_project" "shared_vpc" {
-  name       = "vpc-prd-00001"
-  project_id = "vpc-prd-00001"
-  folder_id  = google_folder.services.name
+  name            = "vpc-prd-00001"
+  project_id      = "vpc-prd-00001"
+  folder_id       = google_folder.services.name
+  billing_account = var.common_service_billing_account
 }
