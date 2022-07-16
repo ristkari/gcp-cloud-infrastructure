@@ -27,3 +27,21 @@ resource "google_folder" "prd" {
   display_name = "prd"
   parent       = google_folder.environments.id
 }
+
+resource "google_project" "shared_vpc" {
+  name       = "vpc-dev-00001"
+  project_id = "vpc-dev-00001"
+  folder_id  = google_folder.services.name
+}
+
+resource "google_project" "shared_vpc" {
+  name       = "vpc-stg-00001"
+  project_id = "vpc-stg-00001"
+  folder_id  = google_folder.services.name
+}
+
+resource "google_project" "shared_vpc" {
+  name       = "vpc-prd-00001"
+  project_id = "vpc-prd-00001"
+  folder_id  = google_folder.services.name
+}
